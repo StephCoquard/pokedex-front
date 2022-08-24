@@ -1,0 +1,29 @@
+<mat-form-field appearance="fill">
+  <mat-label>Name</mat-label>
+  <input matInput [(ngModel)]="nameFilter"/>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Size</mat-label>
+  <input matInput [(ngModel)]="sizeFilter"/>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Operation</mat-label>
+  <mat-select [(ngModel)]="selectedSizeOperation" name="sizeOperation">
+    <mat-option *ngFor="let operation of operations" [value]="operation">
+      {{OperationTypeMapping[operation]}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Weight</mat-label>
+  <input matInput [(ngModel)]="weightFilter"/>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>Operation</mat-label>
+  <mat-select [(ngModel)]="selectedWeightOperation" name="weightOperation">
+    <mat-option *ngFor="let operation of operations" [value]="operation">
+      {{OperationTypeMapping[operation]}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<mat-button-toggle (click)="submit()">Submit</mat-button-toggle>
